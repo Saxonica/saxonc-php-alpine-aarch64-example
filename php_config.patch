@@ -1,0 +1,14 @@
+--- SaxonCHE-linux-arm64-13-0-0/php/src/config.m4	2026-05-28 22:04:48
++++ SaxonCHE-linux-arm64-13-0-0/php/src/config-fixed.m4	2026-06-11 12:00:51
+@@ -111,10 +111,9 @@
+
+   dnl In case of no dependencies
+   AC_DEFINE(HAVE_SAXON, 1, [ Have saxon support ])
+-  EXTENSION_DIR="$SAXON_EXTENSION_DIR"
+   PHP_ADD_LIBRARY(stdc++, 1, SAXON_SHARED_LIBADD)
+   PHP_ADD_LIBRARY(dl, 1, SAXON_SHARED_LIBADD)
+   PHP_ADD_LIBRARY(saxonc-$SAXON_EDITION, 1, SAXON_SHARED_LIBADD)
+   PHP_ADD_LIBRARY(saxonc-core-$SAXON_EDITION, 1, SAXON_SHARED_LIBADD)
+-  PHP_NEW_EXTENSION(saxon, ../../../src/php8_saxon.cpp, $ext_shared)
++  PHP_NEW_EXTENSION(saxon, php8_saxon.cpp, $ext_shared)
+ fi
